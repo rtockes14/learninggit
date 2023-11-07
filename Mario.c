@@ -13,9 +13,10 @@ int main(void)
 }
     
 
-
+//wut
 int get_size(void)
     {
+    int z;
     int n;
     do 
     {
