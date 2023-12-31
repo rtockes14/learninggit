@@ -7,10 +7,16 @@
 			"command": "C:\\mingw64\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
+				"-O0",
+				"-std=c11",
+				"-Wall",
+				"-Werror",
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-lm",
+				"-lcs50"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
