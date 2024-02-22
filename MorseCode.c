@@ -14,24 +14,28 @@ void decode(char *messagein);
 int main()
 {
     //char messagein[200];
-    char *messagein;
-    messagein = malloc(sizeof(1));
+    char messagein[200];
+    //messagein = malloc(sizeof(45));
 
     
     //printf("What is the message that you want to encode? \n\n");
     printf("What is the message you want to decode? \n\n");
-    //gets(messagein);
-    scanf("%s", &messagein);
+    gets(messagein);
+    //scanf("%s", &messagein);
+
+    int length = strlen(messagein);
 
     if (messagein == NULL)
     {
         printf("That string was too long");
+        return 1;
     }
     else{
-        printf("this is the string %c\n", messagein);
+        printf("this is the string:   %s\n", messagein);
+        printf("length is equal to:   %d\n\n", length);
     }
 
-    //decode(messagein);
+    decode(messagein);
 
     //free(messagein);
 }
@@ -65,17 +69,29 @@ void encode(char *messageout)
 void decode(char *messagein)
 {
     // store input here
-    char morseCharacter[5];
-    char actualWord[5];
+    //char morseCharacter[5];
+    char actualWord[20];
+    char letter;
+    char myString[20];
+
+    int n = 0;
+
 
     for (int j = 0; j < strlen(messagein); j++)
     {
-        actualWord[j] = messagein[j];
-    }
+        if (messagein[j] == " ")
+        {
+            break;
+        }
+        else
+        {
+            actualWord[j] = messagein[j];
+        }
+    
 
-    printf("%s\n\n\n", actualWord);
 
-/*
+        //printf("%s\n\n\n", actualWord);
+
     // take user input in the form of morse code -- *messagein
 
     // store input in a variable char *(string) ============= *messagein
@@ -86,19 +102,23 @@ void decode(char *messagein)
         // if they user input matches the same string in the Morse[] array, add i of 'Morse[i] to the start of the letters in ascii table (+96)
         if (strcmp(messagein, Morse[i]) == 0)
         {
-            printf("a match");
-            int n = i;
+            //printf("a match:   ");
 
-            char letter = i + 96;
+            letter = i + 97;
+            // print the letter -- ex. 'a'
+            //printf("%c\n", letter);
+
+            myString[n] = letter;
         }
     }
+    n++;
 
-    // print the letter -- ex. 'a'
-    printf("%c, letter");
-    */
-
-
+    printf("%s\n\n", myString);
 }
+
+
+
+
 
 
 /*
