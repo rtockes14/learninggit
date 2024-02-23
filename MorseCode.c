@@ -76,7 +76,7 @@ void decode(char *messagein)
 
     int n = 0;
 
-
+/*
     for (int j = 0; j < strlen(messagein); j++)
     {
         if (messagein[j] == " ")
@@ -88,9 +88,10 @@ void decode(char *messagein)
             actualWord[j] = messagein[j];
         }
     
+    }
+*/
 
-
-        //printf("%s\n\n\n", actualWord);
+    //printf("%s\n\n\n", actualWord);
 
     // take user input in the form of morse code -- *messagein
 
@@ -114,6 +115,7 @@ void decode(char *messagein)
     n++;
 
     printf("%s\n\n", myString);
+    
 }
 
 
